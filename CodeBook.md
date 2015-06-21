@@ -28,12 +28,12 @@ For each record in the dataset the following is provided:
 
 The raw data set are processed with the script run_analysis.R to create a tidy data set. The following steps were taken:
 
--Merges the training and the test sets: Combine the training and testing data along with the 
+- Merges the training and the test sets: Combine the training and testing data along with the 
 subject labels, activity labels, and names of each of the variables measured.
--Extract measurements on the mean and standard deviation. Retain only the measurements relating to mean and standard deviation.
--Uses descriptive activity names. Convert the activity labels from numeric to text desciptors.
--Label the data set with descriptive variable names. Alter the provided descriptions of the data measured to eliminate abbreviations and add clarity to the variable names.
--Create a second, independent tidy data set. Create an independent tidy data set with the average of each variable for each activity and each subject.
+- Extract measurements on the mean and standard deviation. Retain only the measurements relating to mean and standard deviation.
+- Uses descriptive activity names. Convert the activity labels from numeric to text desciptors.
+- Label the data set with descriptive variable names. Alter the provided descriptions of the data measured to eliminate abbreviations and add clarity to the variable names.
+- Create a second, independent tidy data set. Create an independent tidy data set with the average of each variable for each activity and each subject.
 
 
 ## Tidy Data Set
@@ -48,9 +48,9 @@ The tidy data set contains the following:
 
 Explaining the variable name convention:
 
--The body linear acceleration and angular velocity were derived in time to obtain Jerk signals (timeBodyAccelerometerJerk-XYZ and timeBodyGyroscopeJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (timeBodyAccelerometerMag, timeGravityAccelerometerMag, timeBodyAccelerometerJerkMagnitude, timeBodyGyroscopeMagnitude, timeBodyGyroscopeJerkMagnitude). A Fast Fourier Transform (FFT) was applied to some of these signals producing frequencyBodyAccelerometer-XYZ, frequencyBodyAccelerometerJerk-XYZ, frequencyBodyGyroscope-XYZ, frequencyBodyAccelerometerJerkMagnitude, frequencyBodyGyroscopeMagnitude, frequencyBodyGyroscopeJerkMagnitude.
--mean/std: mean or standard deviation of the measurement
--X/Y/Z: one direction of a 3-axial signal
--mean: global mean value
+- The body linear acceleration and angular velocity were derived in time to obtain Jerk signals (timeBodyAccelerometerJerk-XYZ and timeBodyGyroscopeJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (timeBodyAccelerometerMag, timeGravityAccelerometerMag, timeBodyAccelerometerJerkMagnitude, timeBodyGyroscopeMagnitude, timeBodyGyroscopeJerkMagnitude). A Fast Fourier Transform (FFT) was applied to some of these signals producing frequencyBodyAccelerometer-XYZ, frequencyBodyAccelerometerJerk-XYZ, frequencyBodyGyroscope-XYZ, frequencyBodyAccelerometerJerkMagnitude, frequencyBodyGyroscopeMagnitude, frequencyBodyGyroscopeJerkMagnitude.
+- mean/std: mean or standard deviation of the measurement
+- X/Y/Z: one direction of a 3-axial signal
+- mean: global mean value
 
 The data set is written to the file tidydata.txt

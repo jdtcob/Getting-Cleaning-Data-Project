@@ -38,13 +38,13 @@ Lines 1-10 download the data, creata a separate folder to store the data, and un
 Lines 12-25 read in the raw data. MoveDataTrain is the raw measurements. MoveLabelsTrain is a separate file containing numeric labels indicating, WALKING, WALKING_UPSTAIRS ... etc for each observation contained in MoveDataTrain. SubjectLabelTrain indicates the subject associated with each observation in MoveDataTrain. It should be noted that each of the named variables created in the script are data frames and there are three additional data frames where Train is replaced by Test. This is due to the fact that the data that was downloaded was divided into training and testing sets. FeatureLabels is also created which indicates the names of each of the raw variables, or the length of FeatureLabels equals the number of variables of MoveDataTrain.
 
 At this point we have 7 data frames
--MoveDataTrain
--MoveDataTest
--MoveLabelsTrain
--MoveLabelsTest
--SubjectLabelTrain
--SubjectLabelTest
--FeatureLabels
+- MoveDataTrain
+- MoveDataTest
+- MoveLabelsTrain
+- MoveLabelsTest
+- SubjectLabelTrain
+- SubjectLabelTest
+- FeatureLabels
 
 
 Lines 27-39 combine the training and testing sets. This is necessary because at the onset the data was divided for machine learning problems. 
