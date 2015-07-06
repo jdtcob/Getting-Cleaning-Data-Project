@@ -1,9 +1,9 @@
 ## Description of this file
 
 The purpose of this file is to explain the repository. This repository contains all files required for the Getting and Cleaning Data course project. Contained in this repository:
--CodeBook.md: information about the raw and tidy data sets
--README.md: this file, describing the course project and steps taken to transform the data from raw to tidy
--run_analysis.R: the R script completing the assignment
+- CodeBook.md: information about the raw and tidy data sets
+- README.md: this file, describing the course project and steps taken to transform the data from raw to tidy
+- run_analysis.R: the R script completing the assignment
 
 
 ## Assignment
@@ -19,11 +19,11 @@ Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 You should create one R script called run_analysis.R that does the following. 
--Merges the training and the test sets to create one data set.
--Extracts only the measurements on the mean and standard deviation for each measurement. 
--Uses descriptive activity names to name the activities in the data set
--Appropriately labels the data set with descriptive variable names. 
--From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+- Merges the training and the test sets to create one data set.
+- Extracts only the measurements on the mean and standard deviation for each measurement. 
+- Uses descriptive activity names to name the activities in the data set
+- Appropriately labels the data set with descriptive variable names. 
+- From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 Good luck!
 
@@ -64,7 +64,16 @@ Lines 41-45 find all variables that measure either mean or standard deviation. T
 Lines 52-59 aim to alter the “Activity” column of our dataframe SubsetData. This is accomplished by creating a dataframe ActivityLabels. This dataframe contains the information necessary to translate the numeric data (1,2,3,4,5,6) into text descriptions of the activities being performed. The R function “factor” is employed to accomplish this goal. The result of this function is stored in the variable, Activity which is of type factor. See the R documentation on the factor class for more information. Next, we simply replace the original numeric labels with this factor variable. At this point the requirement “Uses descriptive activity names to name the activities in the data set” is satisfied.
 
 
-Lines 61-67 employ the R function gsub to expand the descriptions of each of the variable names in our data set. To visually confirm the variables names are sufficiently descriptive we can use the R command “names(SubsetData)”. At this point the requirement “Appropriately labels the data set with descriptive variable names” is satisfied.
+Lines 61-67 employ the R function gsub to expand the descriptions of each of the variable names in our data set. The following changes are made:
+
+- t -> time
+- Acc -> Accelerometer
+- Gyro-> Gyroscope
+- Mag -> Magnitude
+- f -> frequency
+- BodyBody -> Body
+
+To visually confirm the variables names are sufficiently descriptive we can use the R command “names(SubsetData)”. At this point the requirement “Appropriately labels the data set with descriptive variable names” is satisfied.
 
 
 Finally, in lines 70-73, we are asked to create a “tidy data set with the average of each variable for each activity and each subject”. This is accomplished with the R function “aggregate”. This function is used to collapse data in R using one or more BY variables and a defined function. In this case we wish to return “the average of each variable for each activity and each subject”. The data is then ordered by subject and activity and then written to a file “tidydata.txt”. At this point the requirement “Create a second, independent tidy data set with the average of each variable for each activity and each subject” is satisfied.
